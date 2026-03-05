@@ -1,0 +1,130 @@
+[
+  {
+    "id": "vendor_001",
+    "name": "GlassTech Solutions",
+    "description": "Premium glass supplier specializing in fire-rated and architectural glass systems. Over 20 years of experience serving commercial and residential projects across the region. Known for exceptional quality control and technical support.",
+    "materials_supplied": ["Fire-Rated Glass Block", "Laminated Safety Glass with Ventilation", "Smart Electrochromic Glass"],
+    "region": "North America",
+    "price_multiplier": 1.0,
+    "quality_grade": "A",
+    "review_score": 4.8,
+    "certifications": ["ISO 9001", "ISO 14001", "ASTM Certified"],
+    "delivery_time_days": 14,
+    "contact": {
+      "email": "sales@glasstechsolutions.com",
+      "phone": "+1-555-0101"
+    }
+  },
+  {
+    "id": "vendor_002",
+    "name": "BuildSmart Materials Co.",
+    "description": "Large-scale distributor of standard construction materials. Competitive pricing with good availability. Suitable for economy to standard grade projects. Fast delivery across multiple regions.",
+    "materials_supplied": ["Standard Tempered Glass Window", "Ceramic Brick Wall System", "Aerated Concrete Block", "Fiber Cement Panel"],
+    "region": "North America",
+    "price_multiplier": 0.85,
+    "quality_grade": "B",
+    "review_score": 4.2,
+    "certifications": ["ISO 9001"],
+    "delivery_time_days": 7,
+    "contact": {
+      "email": "orders@buildsmart.com",
+      "phone": "+1-555-0202"
+    }
+  },
+  {
+    "id": "vendor_003",
+    "name": "Structural Innovations Inc.",
+    "description": "Specialized provider of high-strength structural materials. Focus on reinforced concrete and steel frame systems for demanding applications. Preferred supplier for coastal and high-rise construction.",
+    "materials_supplied": ["Reinforced Concrete Panel", "Steel Frame with Glass Infill"],
+    "region": "North America",
+    "price_multiplier": 1.1,
+    "quality_grade": "A+",
+    "review_score": 4.9,
+    "certifications": ["ISO 9001", "ISO 14001", "LEED Certified", "Structural Engineering Certified"],
+    "delivery_time_days": 21,
+    "contact": {
+      "email": "projects@structuralinnovations.com",
+      "phone": "+1-555-0303"
+    }
+  },
+  {
+    "id": "vendor_004",
+    "name": "EcoPanel Systems",
+    "description": "Environmentally focused material supplier offering sustainable building solutions. Specializes in lightweight materials with excellent thermal properties. Competitive pricing for green building projects.",
+    "materials_supplied": ["Translucent Polycarbonate Panel", "Aerated Concrete Block", "Fiber Cement Panel"],
+    "region": "North America",
+    "price_multiplier": 0.9,
+    "quality_grade": "B+",
+    "review_score": 4.5,
+    "certifications": ["ISO 14001", "Green Building Certified", "Energy Star Partner"],
+    "delivery_time_days": 10,
+    "contact": {
+      "email": "info@ecopanelsystems.com",
+      "phone": "+1-555-0404"
+    }
+  },
+  {
+    "id": "vendor_005",
+    "name": "Premium Glass & Glazing",
+    "description": "Exclusive supplier of high-end architectural glass products. Specializes in smart glass technology and premium safety glass systems. White-glove service for luxury projects.",
+    "materials_supplied": ["Smart Electrochromic Glass", "Laminated Safety Glass with Ventilation", "Fire-Rated Glass Block"],
+    "region": "North America",
+    "price_multiplier": 1.25,
+    "quality_grade": "A+",
+    "review_score": 4.7,
+    "certifications": ["ISO 9001", "ISO 14001", "ASTM Certified", "LEED Certified"],
+    "delivery_time_days": 28,
+    "contact": {
+      "email": "luxury@premiumglass.com",
+      "phone": "+1-555-0505"
+    }
+  },
+  {
+    "id": "vendor_006",
+    "name": "QuickBuild Supply Chain",
+    "description": "Fast-delivery material supplier focusing on standard construction needs. Large inventory with competitive bulk pricing. Best for time-sensitive projects with standard requirements.",
+    "materials_supplied": ["Standard Tempered Glass Window", "Ceramic Brick Wall System", "Translucent Polycarbonate Panel"],
+    "region": "North America",
+    "price_multiplier": 0.8,
+    "quality_grade": "B",
+    "review_score": 4.0,
+    "certifications": ["ISO 9001"],
+    "delivery_time_days": 5,
+    "contact": {
+      "email": "rapid@quickbuild.com",
+      "phone": "+1-555-0606"
+    }
+  },
+  {
+    "id": "vendor_007",
+    "name": "Industrial Materials Hub",
+    "description": "Heavy-duty materials supplier for industrial and commercial construction. Specializes in fire-rated and structural systems. Reliable partner for demanding projects.",
+    "materials_supplied": ["Reinforced Concrete Panel", "Fiber Cement Panel", "Ceramic Brick Wall System"],
+    "region": "North America",
+    "price_multiplier": 0.95,
+    "quality_grade": "A",
+    "review_score": 4.6,
+    "certifications": ["ISO 9001", "ISO 14001", "Industrial Standards Certified"],
+    "delivery_time_days": 14,
+    "contact": {
+      "email": "sales@industrialhub.com",
+      "phone": "+1-555-0707"
+    }
+  },
+  {
+    "id": "vendor_008",
+    "name": "Coastal Construction Materials",
+    "description": "Regional supplier specializing in materials suitable for coastal and high-moisture environments. Expert knowledge in corrosion resistance and weather-resistant systems.",
+    "materials_supplied": ["Fire-Rated Glass Block", "Steel Frame with Glass Infill", "Fiber Cement Panel"],
+    "region": "Coastal Regions",
+    "price_multiplier": 1.05,
+    "quality_grade": "A",
+    "review_score": 4.7,
+    "certifications": ["ISO 9001", "Coastal Zone Certified", "Weather Resistance Tested"],
+    "delivery_time_days": 12,
+    "contact": {
+      "email": "coastal@ccmaterials.com",
+      "phone": "+1-555-0808"
+    }
+  }
+]

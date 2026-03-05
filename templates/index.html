@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MaterialWise — Smarter Construction Material Sourcing</title>
+
+  <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='logo.jpeg') }}">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='mw-style.css') }}">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="MaterialWise Logo" class="mw-logo">
+        MaterialWise
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mwNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mwNav">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#problems">Problems</a></li>
+          <li class="nav-item"><a class="nav-link" href="#solution">Solution</a></li>
+          <li class="nav-item"><a class="nav-link" href="#source">Source</a></li>
+          <li class="nav-item"><a class="nav-link" href="#future">Roadmap</a></li>
+        </ul>
+        <a class="btn btn-glow ms-lg-3 mt-3 mt-lg-0" href="#source">
+          Get Started <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7 fade-up">
+          <span class="badge badge-soft px-3 py-2 rounded-pill">
+            Smarter Procurement for Construction Teams
+          </span>
+          <h1 class="display-4 mt-3 mb-3">MaterialWise</h1>
+          <div class="subtitle h4 mb-3">Compare Suppliers. Reduce Cost. Improve Quality.</div>
+          <p class="lead lead-muted mb-4">
+            MaterialWise helps builders and contractors shortlist reliable suppliers quickly.
+            Get a clear comparison of pricing, delivery time, and basic quality indicators—so procurement decisions are faster and safer.
+          </p>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <a class="btn btn-glow btn-lg" href="#source">
+              Compare Suppliers <i class="bi bi-lightning-charge-fill ms-1"></i>
+            </a>
+            <a class="btn btn-outline-soft btn-lg" href="#solution">
+              See How It Works <i class="bi bi-compass ms-1"></i>
+            </a>
+          </div>
+          <div class="d-flex flex-wrap gap-2 align-items-center">
+            <span class="badge badge-ai rounded-pill px-3 py-2"><i class="bi bi-shield-check me-1"></i>Verified Supplier Profiles</span>
+            <span class="badge badge-hot rounded-pill px-3 py-2"><i class="bi bi-graph-up me-1"></i>Location-Aware Estimates</span>
+            <span class="badge badge-soft rounded-pill px-3 py-2"><i class="bi bi-stars me-1"></i>Clear Recommendation Notes</span>
+          </div>
+          <div class="divider"></div>
+          <div class="row g-3">
+            <div class="col-sm-4">
+              <div class="card-glass p-3">
+                <div class="tiny mb-1">Cost Control</div>
+                <div class="h4 mb-0 fw-bold">15–30%</div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card-glass p-3">
+                <div class="tiny mb-1">Supplier Screening</div>
+                <div class="h4 mb-0 fw-bold">Faster</div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card-glass p-3">
+                <div class="tiny mb-1">Quality Checks</div>
+                <div class="h4 mb-0 fw-bold">IS Focus</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 fade-up">
+          <div class="img-card">
+            <img alt="Construction materials and planning" src="{{ url_for('static', filename='img1.jpeg') }}">
+            <div class="img-overlay"></div>
+            <div class="img-caption">
+              <div class="d-flex align-items-start gap-3">
+                <div class="icon-pill"><i class="bi bi-robot fs-5"></i></div>
+                <div>
+                  <div class="fw-bold">Recommendation Snapshot</div>
+                  <div class="tiny">Quick view of trend, risk, and supplier score</div>
+                  <div class="d-flex gap-2 mt-2 flex-wrap">
+                    <span class="badge badge-soft rounded-pill px-3 py-2" id="trendText"><i class="bi bi-graph-up me-1"></i>Stable</span>
+                    <span class="badge badge-soft rounded-pill px-3 py-2" id="riskText"><i class="bi bi-shield me-1"></i>Low Risk</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tiny mt-3">*Images are used for presentation.</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROBLEMS -->
+  <section id="problems" class="section">
+    <div class="container">
+      <div class="fade-up">
+        <h2 class="section-title mb-2">What's Going Wrong Today</h2>
+        <p class="section-sub mb-4">Common procurement issues that impact cost, quality, and timelines</p>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="card-glass p-4 h-100">
+            <div class="d-flex gap-3">
+              <div class="icon-pill"><i class="bi bi-currency-rupee fs-5"></i></div>
+              <div>
+                <h3 class="h6 fw-bold mb-1">Unclear Pricing</h3>
+                <p class="tiny mb-0">Rates vary widely and quotations are hard to compare.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="card-glass p-4 h-100">
+            <div class="d-flex gap-3">
+              <div class="icon-pill"><i class="bi bi-exclamation-triangle fs-5"></i></div>
+              <div>
+                <h3 class="h6 fw-bold mb-1">Quality Uncertainty</h3>
+                <p class="tiny mb-0">Material quality is difficult to validate before delivery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="card-glass p-4 h-100">
+            <div class="d-flex gap-3">
+              <div class="icon-pill"><i class="bi bi-people fs-5"></i></div>
+              <div>
+                <h3 class="h6 fw-bold mb-1">Extra Markups</h3>
+                <p class="tiny mb-0">Multiple layers add cost without improving value.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="card-glass p-4 h-100">
+            <div class="d-flex gap-3">
+              <div class="icon-pill"><i class="bi bi-clock-history fs-5"></i></div>
+              <div>
+                <h3 class="h6 fw-bold mb-1">Delivery Delays</h3>
+                <p class="tiny mb-0">Late materials affect labour scheduling and project milestones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mt-3">
+        <div class="col-lg-12 fade-up">
+          <div class="card-glass p-4 d-flex flex-wrap gap-3 align-items-center justify-content-between">
+            <div class="d-flex gap-3 align-items-center">
+              <div class="icon-pill"><i class="bi bi-lightbulb fs-5"></i></div>
+              <div>
+                <div class="fw-bold">MaterialWise brings a simple comparison view—so teams can shortlist faster and buy with more confidence.</div>
+                <div class="tiny">Clear supplier cards, basic quality indicators, and a recommendation summary.</div>
+              </div>
+            </div>
+            <a class="btn btn-outline-soft" href="#source">View Demo <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="solution" class="section">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 fade-up">
+          <h2 class="section-title mb-2">How MaterialWise Helps</h2>
+          <p class="section-sub mb-4">A clear workflow for comparing suppliers and making quicker procurement decisions</p>
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="card-glass p-4">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="icon-pill"><i class="bi bi-bar-chart-line fs-5"></i></div>
+                  <div>
+                    <h3 class="h6 fw-bold mb-1">Supplier Comparison</h3>
+                    <div class="tiny">Side-by-side view of estimated rate, delivery time, and scoring.</div>
+                    <div class="d-flex gap-2 flex-wrap mt-2">
+                      <span class="badge badge-soft rounded-pill px-3 py-2">Compare quickly</span>
+                      <span class="badge badge-soft rounded-pill px-3 py-2">Shortlist faster</span>
+                      <span class="badge badge-soft rounded-pill px-3 py-2">Reduce back-and-forth</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card-glass p-4">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="icon-pill"><i class="bi bi-shield-check fs-5"></i></div>
+                  <div>
+                    <h3 class="h6 fw-bold mb-1">Basic Quality Indicators</h3>
+                    <div class="tiny">Certificates and compliance indicators help reduce quality risk.</div>
+                    <div class="d-flex gap-2 flex-wrap mt-2">
+                      <span class="badge badge-ai rounded-pill px-3 py-2">Certificates</span>
+                      <span class="badge badge-ai rounded-pill px-3 py-2">Quality notes</span>
+                      <span class="badge badge-ai rounded-pill px-3 py-2">Risk hint</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card-glass p-4">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="icon-pill"><i class="bi bi-award fs-5"></i></div>
+                  <div>
+                    <h3 class="h6 fw-bold mb-1">Trust &amp; Sustainability View</h3>
+                    <div class="tiny">A simple score to help prioritise reliable and responsible suppliers.</div>
+                    <div class="d-flex gap-2 flex-wrap mt-2">
+                      <span class="badge badge-hot rounded-pill px-3 py-2">Trust score</span>
+                      <span class="badge badge-hot rounded-pill px-3 py-2">Green score</span>
+                      <span class="badge badge-hot rounded-pill px-3 py-2">Supplier history</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-up">
+          <div class="img-card">
+            <img alt="Construction procurement and planning" src="{{ url_for('static', filename='img2.jpeg') }}">
+            <div class="img-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCE -->
+  <section id="source" class="section">
+    <div class="container">
+      <div class="fade-up">
+        <h2 class="section-title mb-2">Try the Demo</h2>
+        <p class="section-sub mb-4">Enter material details and view a supplier comparison</p>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-5 fade-up">
+          <div class="card-glass p-4">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <div class="fw-bold">Request Details</div>
+                <div class="tiny">Choose material, quantity, and location.</div>
+              </div>
+              <span class="badge badge-soft rounded-pill px-3 py-2"><i class="bi bi-lightning me-1"></i>Demo</span>
+            </div>
+            <div class="divider"></div>
+            <form id="mwForm" autocomplete="off">
+              <div class="mb-3">
+                <label class="form-label tiny">Material Type</label>
+                <select class="form-select" id="material" required>
+                  <option value="" selected>Select material...</option>
+                  <option value="Cement">Cement</option>
+                  <option value="Steel">Steel</option>
+                  <option value="Sand">Sand</option>
+                  <option value="Aggregates">Aggregates</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label tiny">Quantity</label>
+                <input class="form-control" id="quantity" placeholder="e.g., 100 bags / 5 tons / 20 m³" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label tiny">Location</label>
+                <input class="form-control" id="location" placeholder="e.g., Chennai / Coimbatore / Bangalore" required>
+              </div>
+              <button class="btn btn-glow w-100 py-2" type="submit">
+                Compare Suppliers <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+              <div class="tiny mt-3">You'll see supplier cards and a recommendation summary.</div>
+            </form>
+          </div>
+          <div class="card-glass p-4 mt-3 fade-up">
+            <div class="d-flex gap-3 align-items-start">
+              <div class="icon-pill"><i class="bi bi-info-circle fs-5"></i></div>
+              <div>
+                <div class="fw-bold">How the scoring is calculated</div>
+                <div class="tiny">Score considers trust, sustainability, certificate status, estimated rate, and delivery time.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 fade-up">
+          <div class="card-glass p-4">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+              <div>
+                <h3 class="h5 fw-bold mb-1">Supplier Comparison</h3>
+                <div class="tiny">Suppliers shown for your selected material</div>
+              </div>
+              <span class="badge badge-ai rounded-pill px-3 py-2" id="aiBadge" style="display:none;">
+                <i class="bi bi-stars me-1"></i>Top Match
+              </span>
+            </div>
+            <div class="divider"></div>
+            <div id="supplierGrid" class="row g-3">
+              <div class="col-12">
+                <div class="tiny">Fill the form and click <b>Compare Suppliers</b> to view the results.</div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <h4 class="h6 fw-bold mb-2">Recommendation Summary</h4>
+            <div id="explainBox" class="tiny">No recommendation yet.</div>
+          </div>
+          <div class="img-card mt-3 fade-up">
+            <img alt="Construction supply chain" src="{{ url_for('static', filename='img1.jpeg') }}">
+            <div class="img-overlay"></div>
+            <div class="img-caption">
+              <div class="fw-bold">Simpler Procurement Flow</div>
+              <div class="tiny">Compare options quickly and reduce decision time.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="future" class="section">
+    <div class="container">
+      <div class="fade-up">
+        <h2 class="section-title mb-2">Roadmap</h2>
+        <p class="section-sub mb-4">Planned upgrades for a full-scale product version</p>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="card-glass p-4 h-100">
+            <div class="icon-pill mb-3"><i class="bi bi-link-45deg fs-5"></i></div>
+            <h3 class="h6 fw-bold">Material Traceability</h3>
+            <p class="tiny mb-0">Track material movement from source to site for better accountability.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="card-glass p-4 h-100">
+            <div class="icon-pill mb-3"><i class="bi bi-broadcast fs-5"></i></div>
+            <h3 class="h6 fw-bold">Quality Monitoring</h3>
+            <p class="tiny mb-0">Add checks during storage and transport to reduce damage and wastage.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="card-glass p-4 h-100">
+            <div class="icon-pill mb-3"><i class="bi bi-building fs-5"></i></div>
+            <h3 class="h6 fw-bold">BIM Support</h3>
+            <p class="tiny mb-0">Connect with quantity planning tools to reduce manual work.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="card-glass p-4 h-100">
+            <div class="icon-pill mb-3"><i class="bi bi-globe2 fs-5"></i></div>
+            <h3 class="h6 fw-bold">Carbon &amp; Sustainability</h3>
+            <p class="tiny mb-0">Show sustainability insights and promote greener sourcing choices.</p>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card-glass p-4 fade-up">
+        <div class="d-flex gap-3 align-items-start">
+          <div class="icon-pill"><i class="bi bi-rocket-takeoff fs-5"></i></div>
+          <div>
+            <div class="fw-bold">About This Prototype</div>
+            <div class="tiny">
+              Built for hackathon use to demonstrate a clearer supplier comparison experience.
+              The goal is to show how procurement decisions can be faster, more transparent, and less risky.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <div>&copy; <span id="year"></span> MaterialWise.</div>
+      <div class="d-flex gap-3">
+        <a class="text-decoration-none text-white-50" href="#home">Top</a>
+        <a class="text-decoration-none text-white-50" href="#source">Start</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.querySelectorAll('.nav-link').forEach(a => {
+      a.addEventListener('click', () => {
+        document.querySelectorAll('.nav-link').forEach(x => x.classList.remove('active'));
+        a.classList.add('active');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const suppliers = [
+      { name: "BuildMart Verified", trust: 92, green: 78, delivery: 2, cert: true,  base: 540 },
+      { name: "CivicSupply Pro",    trust: 88, green: 86, delivery: 3, cert: true,  base: 520 },
+      { name: "Metro Materials",    trust: 81, green: 70, delivery: 4, cert: false, base: 500 },
+      { name: "PrimeStone Direct",  trust: 85, green: 74, delivery: 2, cert: true,  base: 535 }
+    ];
+
+    function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+    function computeMultiplier(material) {
+      return { Cement: 1.00, Steel: 6.80, Sand: 0.35, Aggregates: 0.45 }[material] ?? 1.00;
+    }
+    function scoreSupplier(s, price, material) {
+      const certBonus = s.cert ? 7 : 0;
+      const pricePenalty = (material === "Steel") ? (price / 105) : (price / 48);
+      const score = Math.round((s.trust * 0.45) + (s.green * 0.25) + certBonus + 22 - pricePenalty - (s.delivery * 3.2));
+      return Math.max(40, Math.min(98, score));
+    }
+    function trendAndRisk(material) {
+      if (material === "Steel")  return ["Volatile", "Medium Risk"];
+      if (material === "Cement") return ["Stable",   "Low Risk"];
+      if (material === "Sand")   return ["Stable",   "Medium Risk"];
+      return ["Stable", "Low Risk"];
+    }
+
+    function renderSuppliers(material, qty, loc) {
+      const mult = computeMultiplier(material);
+      const computed = suppliers.map(s => {
+        const price = Math.round((s.base + rand(-18, 28)) * mult);
+        return { ...s, price, score: scoreSupplier(s, price, material) };
+      }).sort((a, b) => b.score - a.score);
+
+      const top = computed[0];
+      document.getElementById('aiBadge').style.display = 'inline-flex';
+      document.getElementById('supplierGrid').innerHTML = computed.map(s => {
+        const isTop = (s.name === top.name);
+        const certText  = s.cert ? "Available"       : "Pending";
+        const certIcon  = s.cert ? "bi-shield-check" : "bi-shield-exclamation";
+        const certBadge = s.cert ? "badge-ai"        : "badge-soft";
+        return `
+          <div class="col-md-6">
+            <div class="card-glass p-4 h-100">
+              <div class="d-flex justify-content-between align-items-start gap-2">
+                <div><div class="fw-bold">${s.name}</div><div class="tiny">${material} &bull; ${loc}</div></div>
+                ${isTop ? `<span class="badge badge-ai rounded-pill px-3 py-2"><i class="bi bi-stars me-1"></i>Top Match</span>` : ""}
+              </div>
+              <div class="divider"></div>
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="tiny"><i class="bi bi-currency-rupee me-1"></i>Estimated Rate</div>
+                  <div class="h5 fw-bold mb-0">&#8377;${s.price.toLocaleString()}</div>
+                  <div class="tiny">for ${qty}</div>
+                </div>
+                <div class="col-6">
+                  <div class="tiny"><i class="bi bi-speedometer2 me-1"></i>Score</div>
+                  <div class="h5 fw-bold mb-0">${s.score}/100</div>
+                  <div class="tiny">Trust + Green + Quality</div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex gap-2 flex-wrap mt-2">
+                    <span class="badge ${certBadge} rounded-pill px-3 py-2"><i class="bi ${certIcon} me-1"></i>Certificates: ${certText}</span>
+                    <span class="badge badge-soft rounded-pill px-3 py-2"><i class="bi bi-truck me-1"></i>Delivery: ${s.delivery}–${s.delivery + 1} days</span>
+                    <span class="badge badge-soft rounded-pill px-3 py-2"><i class="bi bi-leaf me-1"></i>Green: ${s.green}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+      }).join("");
+
+      document.getElementById('explainBox').innerHTML = `
+        <div class="mb-2"><b>Recommended:</b> ${top.name}</div>
+        <ul class="mb-0 ps-3">
+          <li>Strong supplier profile based on trust and consistency.</li>
+          <li>${top.cert ? "Certificates are available for verification." : "Certificate status should be verified before purchase."}</li>
+          <li>Delivery time is suitable for keeping the schedule on track.</li>
+          <li>Estimated rate looks competitive for <b>${material}</b> in <b>${loc}</b>.</li>
+        </ul>`;
+
+      const [trend, risk] = trendAndRisk(material);
+      document.getElementById('trendText').innerHTML = `<i class="bi bi-graph-up me-1"></i>${trend}`;
+      document.getElementById('riskText').innerHTML  = `<i class="bi bi-shield me-1"></i>${risk}`;
+    }
+
+    document.getElementById('mwForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const material = document.getElementById('material').value;
+      const qty      = document.getElementById('quantity').value.trim();
+      const loc      = document.getElementById('location').value.trim();
+      if (!material || !qty || !loc) return;
+      renderSuppliers(material, qty, loc);
+      document.getElementById('supplierGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  </script>
+
+  <!-- CHAT LINK — clicking opens the AI consultant chat page -->
+  <div class="mw-chat-fab">
+    <a href="/chat" class="btn btn-glow">
+      <i class="bi bi-chat-dots-fill me-1"></i> Chat
+    </a>
+  </div>
+
+</body>
+</html>

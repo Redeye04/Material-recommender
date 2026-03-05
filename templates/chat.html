@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaterialWise — AI Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#0d1117',
+                            surface: '#161b22',
+                            border: '#30363d',
+                            hover: '#21262d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        
+        .chat-messages::-webkit-scrollbar { width: 1px; }
+        .chat-messages::-webkit-scrollbar-track { background: transparent; }
+        .chat-messages::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 4px; }
+        .chat-messages::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+        
+        #user-input::-webkit-scrollbar { display: none; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .message-enter { animation: fadeIn 0.3s ease-out; }
+        
+        .typing-indicator span { animation: pulse 1.4s infinite; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-100 antialiased">
+    <div class="flex flex-col h-screen">
+        <!-- Top Navigation Bar -->
+        <nav class="bg-dark-surface border-b border-dark-border px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-semibold text-white">MaterialWise</h1>
+                        <p class="text-xs text-gray-400">AI Material Consultant</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <div id="status-indicator" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-dark-hover">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span id="status-text" class="text-sm text-gray-300">Ready</span>
+                </div>
+                <button id="reset-btn" class="p-2 rounded-lg hover:bg-dark-hover transition-colors text-gray-400 hover:text-gray-200" title="New Chat">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Chat Messages Area -->
+        <div class="flex-1 overflow-hidden">
+            <div id="chat-messages" class="h-full overflow-y-auto px-4 py-6">
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="flex gap-4 message-enter">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1 space-y-2">
+                            <div class="prose prose-invert max-w-none">
+                                <p class="text-gray-100 leading-relaxed">Hello! I'm your Architectural Materials Consultant. I'll help you find the perfect building material for your project.</p>
+                                <p class="text-gray-100 leading-relaxed">Let's start by understanding what you need. What is the primary purpose of this material?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="border-t border-dark-border bg-dark-surface">
+            <div class="max-w-3xl mx-auto px-4 py-4">
+                <div class="relative">
+                    <textarea 
+                        id="user-input"
+                        rows="1"
+                        placeholder="Message Material Agent..."
+                        class="w-full bg-dark-hover border border-dark-border rounded-2xl px-4 py-3 pr-12 text-gray-100 placeholder-gray-500 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all overflow-y-hidden"
+                        style="max-height: 200px; scrollbar-width: none; -ms-overflow-style: none;"
+                    ></textarea>
+                    <button 
+                        id="send-btn"
+                        class="absolute right-2 bottom-3 p-2 rounded-lg bg-blue-600 hover:bg-blue-700 disabled:bg-gray-700 disabled:cursor-not-allowed transition-colors"
+                        disabled
+                    >
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-2 flex items-center justify-between text-xs text-gray-500">
+                    <span>Press Enter to send, Shift+Enter for new line</span>
+                    <span class="text-gray-600">Powered by n8n</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.N8N_CONFIG = {
+            webhookUrl: "{{ n8n_webhook_url }}",
+            route: "{{ n8n_webhook_route }}"
+        };
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

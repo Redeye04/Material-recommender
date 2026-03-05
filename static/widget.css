@@ -1,0 +1,129 @@
+/* Lightweight styles for the floating n8n chat widget */
+#n8n-chat-widget-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 340px;
+    height: 480px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#n8n-chat-widget-header {
+    background: #854fff;
+    color: #ffffff;
+    padding: 16px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+}
+
+#n8n-chat-widget-body {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #f9f8ff 0%, #ffffff 100%);
+}
+
+#n8n-chat-widget-body p {
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    background: #f1f1f1;
+    color: #333333;
+}
+
+#n8n-chat-widget-body p.bot-message {
+    background: #854fff;
+    color: #ffffff;
+}
+
+#n8n-chat-widget-footer {
+    padding: 12px;
+    border-top: 1px solid #ececec;
+    display: flex;
+    gap: 8px;
+    background: #ffffff;
+}
+
+#n8n-chat-widget-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+#n8n-chat-widget-input:focus {
+    border-color: #854fff;
+    box-shadow: 0 0 0 3px rgba(133, 79, 255, 0.12);
+}
+
+#n8n-chat-widget-send {
+    background: #854fff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#n8n-chat-widget-send:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#n8n-chat-widget-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #854fff;
+    color: #ffffff;
+    border: none;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+#n8n-chat-widget-close {
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    #n8n-chat-widget-container {
+        width: calc(100% - 20px);
+        height: 70vh;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    #n8n-chat-widget-button {
+        right: 14px;
+        bottom: 14px;
+    }
+}

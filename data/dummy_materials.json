@@ -1,0 +1,142 @@
+[
+  {
+    "id": "mat_001",
+    "name": "Fire-Rated Glass Block",
+    "description": "Thick tempered glass blocks providing excellent natural light transmission while maintaining superior fire safety standards. Ideal for external walls where both aesthetics and safety are paramount. These blocks offer 60-minute fire resistance and are perfect for high-stress coastal environments.",
+    "features": ["#Day_lighting", "#Position:external_wall", "#FRL:60", "#Quality:Premium", "#Stress_handle:High"],
+    "cost_per_unit": 120,
+    "unit": "per square meter",
+    "technical_specs": {
+      "fire_resistance_level": 60,
+      "load_bearing_capacity": "High",
+      "light_transmission": "85%",
+      "thermal_insulation": "Medium"
+    }
+  },
+  {
+    "id": "mat_002",
+    "name": "Standard Tempered Glass Window",
+    "description": "Basic tempered glass panels suitable for standard window installations. Provides good light transmission and ventilation options. Best for interior applications or low-stress environments with standard building requirements.",
+    "features": ["#Day_lighting", "#Position:external_wall", "#Ventilation", "#Quality:Standard", "#Stress_handle:Medium"],
+    "cost_per_unit": 45,
+    "unit": "per square meter",
+    "technical_specs": {
+      "fire_resistance_level": 0,
+      "load_bearing_capacity": "Medium",
+      "light_transmission": "90%",
+      "thermal_insulation": "Low"
+    }
+  },
+  {
+    "id": "mat_003",
+    "name": "Reinforced Concrete Panel",
+    "description": "Heavy-duty reinforced concrete panels engineered for maximum load-bearing capacity. Perfect for structural external walls in high-stress environments. Excellent fire resistance but no light transmission. Used in industrial and coastal high-rise construction.",
+    "features": ["#Position:external_wall", "#Stress_handle:High", "#FRL:120", "#Quality:Premium", "#Structural"],
+    "cost_per_unit": 95,
+    "unit": "per square meter",
+    "technical_specs": {
+      "fire_resistance_level": 120,
+      "load_bearing_capacity": "Very High",
+      "light_transmission": "0%",
+      "thermal_insulation": "High"
+    }
+  },
+  {
+    "id": "mat_004",
+    "name": "Translucent Polycarbonate Panel",
+    "description": "Lightweight polycarbonate panels offering excellent light diffusion and moderate structural strength. Ideal for non-load-bearing walls, skylights, and partitions. Cost-effective solution for daylighting needs without ventilation requirements.",
+    "features": ["#Day_lighting", "#Position:external_wall", "#Quality:Economy", "#Stress_handle:Low"],
+    "cost_per_unit": 30,
+    "unit": "per square meter",
+    "technical_specs": {
+      "fire_resistance_level": 15,
+      "load_bearing_capacity": "Low",
+      "light_transmission": "75%",
+      "thermal_insulation": "Medium"
+    }
+  },
+  {
+    "id": "mat_005",
+    "name": "Ceramic Brick Wall System",
+    "description": "Traditional ceramic brick construction suitable for both structural and aesthetic purposes. Excellent thermal mass and fire resistance. No light transmission but can be combined with window systems. Ideal for residential and commercial facades.",
+    "features": ["#Position:external_wall", "#Stress_handle:Medium", "#FRL:90", "#Quality:Standard", "#Aesthetic"],
+    "cost_per_unit": 60,
+    "unit": "per square meter",
+    "technical_specs": {
+      "fire_resistance_level": 90,
+      "load_bearing_capacity": "Medium",
+      "light_transmission": "0%",
+      "thermal_insulation": "High"
+    }
+  },
+  {
+    "id": "mat_006",
+    "name": "Laminated Safety Glass with Ventilation",
+    "description": "Premium laminated glass system with integrated ventilation mechanisms. Combines security, light transmission, and air flow control. Perfect for residential and office buildings requiring both natural light and fresh air circulation.",
+    "features": ["#Day_lighting", "#Position:external_wall", "#Ventilation", "#Quality:Premium", "#Stress_handle:Medium", "#FRL:30"],
+    "cost_per_unit": 140,
+    "unit": "per square meter",
+    "technical_specs": {
+      "fire_resistance_level": 30,
+      "load_bearing_capacity": "Medium",
+      "light_transmission": "80%",
+      "thermal_insulation": "Medium"
+    }
+  },
+  {
+    "id": "mat_007",
+    "name": "Aerated Concrete Block",
+    "description": "Lightweight aerated concrete blocks offering excellent thermal insulation and moderate structural strength. Easy to work with, cost-effective for large surface areas. Suitable for standard external walls in non-extreme environments.",
+    "features": ["#Position:external_wall", "#Stress_handle:Low", "#FRL:60", "#Quality:Economy", "#Thermal_insulation"],
+    "cost_per_unit": 35,
+    "unit": "per square meter",
+    "technical_specs": {
+      "fire_resistance_level": 60,
+      "load_bearing_capacity": "Low",
+      "light_transmission": "0%",
+      "thermal_insulation": "Very High"
+    }
+  },
+  {
+    "id": "mat_008",
+    "name": "Steel Frame with Glass Infill",
+    "description": "Modern steel frame construction system with glass infill panels. Excellent for high-rise buildings requiring both structural integrity and maximum natural light. Premium solution for architectural statement projects.",
+    "features": ["#Day_lighting", "#Position:external_wall", "#Stress_handle:High", "#Quality:Premium", "#FRL:60", "#Structural"],
+    "cost_per_unit": 180,
+    "unit": "per square meter",
+    "technical_specs": {
+      "fire_resistance_level": 60,
+      "load_bearing_capacity": "Very High",
+      "light_transmission": "75%",
+      "thermal_insulation": "Medium"
+    }
+  },
+  {
+    "id": "mat_009",
+    "name": "Fiber Cement Panel",
+    "description": "Durable fiber cement panels suitable for external cladding. Excellent fire resistance and weather resistance. Cost-effective solution for industrial and commercial applications. No light transmission.",
+    "features": ["#Position:external_wall", "#Stress_handle:Medium", "#FRL:90", "#Quality:Standard", "#Weather_resistant"],
+    "cost_per_unit": 50,
+    "unit": "per square meter",
+    "technical_specs": {
+      "fire_resistance_level": 90,
+      "load_bearing_capacity": "Medium",
+      "light_transmission": "0%",
+      "thermal_insulation": "Medium"
+    }
+  },
+  {
+    "id": "mat_010",
+    "name": "Smart Electrochromic Glass",
+    "description": "Advanced smart glass technology with variable tint control. Maximum daylighting control and energy efficiency. Premium solution for modern office buildings and luxury residential projects. Requires electrical connection.",
+    "features": ["#Day_lighting", "#Position:external_wall", "#Quality:Premium", "#Stress_handle:Medium", "#Smart_technology", "#FRL:30"],
+    "cost_per_unit": 250,
+    "unit": "per square meter",
+    "technical_specs": {
+      "fire_resistance_level": 30,
+      "load_bearing_capacity": "Medium",
+      "light_transmission": "Variable 5-80%",
+      "thermal_insulation": "High"
+    }
+  }
+]
